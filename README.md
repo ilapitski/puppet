@@ -1,4 +1,4 @@
-# puppet-learning-vm quests
+# puppet_task2
 
 
 ![alt tag](pictures/01wel.png)
