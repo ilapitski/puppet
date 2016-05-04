@@ -12,7 +12,6 @@
 ![alt tag](pictures/04mac3.png)
 ![alt tag](pictures/05mod2.png)
 ![alt tag](pictures/05mod.png)
-![alt tag](pictures/06msql2.png)
 ![alt tag](pictures/06msql.png)
 ![alt tag](pictures/07ntp2.png)
 ![alt tag](pictures/07ntp.png)
