@@ -1,0 +1,97 @@
+[0;32mInfo: Retrieving pluginfacts[0m
+[0;32mInfo: Retrieving plugin[0m
+[0;32mInfo: Loading facts[0m
+[0;32mInfo: Caching catalog for puppet-node02[0m
+[0;32mInfo: Applying configuration version '1462482970'[0m
+[mNotice: /Stage[main]/Mysql::Server::Install/Package[mysql-server]/ensure: created[0m
+[mNotice: /Stage[main]/Mysql::Server::Config/File[mysql-config-file]/content: 
+--- /etc/my.cnf	2016-03-22 18:09:45.000000000 +0000
++++ /tmp/puppet-file20160505-4060-1rqpo8h-0	2016-05-05 22:48:03.885006991 +0100
+@@ -1,10 +1,63 @@
++### MANAGED BY PUPPET ###
++
++[client]
++port = 3306
++socket = /var/lib/mysql/mysql.sock
++
++[isamchk]
++key_buffer_size = 16M
++
+ [mysqld]
+-datadir=/var/lib/mysql
+-socket=/var/lib/mysql/mysql.sock
+-user=mysql
+-# Disabling symbolic-links is recommended to prevent assorted security risks
+-symbolic-links=0
++basedir = /usr
++bind-address = 127.0.0.1
++datadir = /var/lib/mysql
++expire_logs_days = 10
++key_buffer_size = 16M
++log-error = /var/log/mysqld.log
++max_allowed_packet = 16M
++max_binlog_size = 100M
++max_connections = 1024
++pid-file = /var/run/mysqld/mysqld.pid
++port = 3306
++query_cache_limit = 1M
++query_cache_size = 16M
++skip-external-locking
++socket = /var/lib/mysql/mysql.sock
++ssl = false
++ssl-ca = /etc/mysql/cacert.pem
++ssl-cert = /etc/mysql/server-cert.pem
++ssl-key = /etc/mysql/server-key.pem
++thread_cache_size = 8
++thread_stack = 256K
++tmpdir = /tmp
++user = mysql
++
++[mysqld-5.0]
++myisam-recover = BACKUP
++
++[mysqld-5.1]
++myisam-recover = BACKUP
++
++[mysqld-5.5]
++myisam-recover = BACKUP
++
++[mysqld-5.6]
++myisam-recover-options = BACKUP
++
++[mysqld-5.7]
++myisam-recover-options = BACKUP
+ 
+ [mysqld_safe]
+-log-error=/var/log/mysqld.log
+-pid-file=/var/run/mysqld/mysqld.pid
++log-error = /var/log/mysqld.log
++nice = 0
++socket = /var/lib/mysql/mysql.sock
++
++[mysqldump]
++max_allowed_packet = 16M
++quick
++quote-names
++
++
++
++!includedir /etc/my.cnf.d
++
+[0m
+[mNotice: /Stage[main]/Mysql::Server::Config/File[mysql-config-file]/content: content changed '{md5}8ace886bbe7e274448bc8bea16d3ead6' to '{md5}48c654e2a4e67c821c4ceaa60e011c0f'[0m
+[mNotice: /Stage[main]/Mysql::Server::Config/File[/etc/my.cnf.d]/ensure: created[0m
+[mNotice: /Stage[main]/Nginx/Yumrepo[nginx]/ensure: created[0m
+[0;32mInfo: changing mode of /etc/yum.repos.d/nginx.repo from 600 to 644[0m
+[mNotice: /Stage[main]/Nginx/Package[nginx]/ensure: created[0m
+[mNotice: /Stage[main]/Nginx/Service[nginx]/ensure: ensure changed 'stopped' to 'running'[0m
+[0;32mInfo: /Stage[main]/Nginx/Service[nginx]: Unscheduling refresh on Service[nginx][0m
+[mNotice: /Stage[main]/Mysql::Server::Installdb/Mysql_datadir[/var/lib/mysql]/ensure: created[0m
+[mNotice: /Stage[main]/Mysql::Server::Service/Service[mysqld]/ensure: ensure changed 'stopped' to 'running'[0m
+[0;32mInfo: /Stage[main]/Mysql::Server::Service/Service[mysqld]: Unscheduling refresh on Service[mysqld][0m
+[mNotice: /Stage[main]/Mysql::Server::Root_password/Mysql_user[root@localhost]/password_hash: defined 'password_hash' as '*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19'[0m
+[mNotice: /Stage[main]/Mysql::Server::Root_password/File[/root/.my.cnf]/ensure: defined content as '{md5}9910b6aa16e7a0522d2505e472b8cb0c'[0m
+[mNotice: /Stage[main]/Main/Node[puppet-node02]/Mysql_user[prod_user@localhost]/ensure: created[0m
+[mNotice: /Stage[main]/Main/Node[puppet-node02]/Mysql_grant[prod_user@localhost/prod_mdb.*]/ensure: created[0m
+[mNotice: /Stage[main]/Main/Node[puppet-node02]/Mysql_database[prod_mdb]/ensure: created[0m
+[mNotice: Finished catalog run in 8.57 seconds[0m
