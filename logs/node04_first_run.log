@@ -1,0 +1,33 @@
+[0;32mInfo: Retrieving pluginfacts[0m
+[0;32mInfo: Retrieving plugin[0m
+[0;32mInfo: Loading facts[0m
+[0;32mInfo: Caching catalog for puppet-node04[0m
+[0;32mInfo: Applying configuration version '1462570492'[0m
+[mNotice: Hello from jboss_task[0m
+[mNotice: /Stage[main]/Java_and_unzip::Install/Notify[Notification]/message: defined 'message' as 'Hello from jboss_task'[0m
+[mNotice: /Stage[main]/Jboss::User/User[jboss]/ensure: created[0m
+[mNotice: /Stage[main]/Java_and_unzip::Install/Package[java-1.6.0-openjdk.x86_64]/ensure: created[0m
+[mNotice: /Stage[main]/Java_and_unzip::Install/Package[unzip]/ensure: created[0m
+[mNotice: /Stage[main]/Jboss::Install/File[jboss_link]/ensure: created[0m
+[mNotice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Retrieve http://sourceforge.net/projects/jboss/files/JBoss/JBoss-5.1.0.GA/jboss-5.1.0.GA.zip in /var/tmp - netinstall_jboss]/returns: executed successfully[0m
+[mNotice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Extract jboss-5.1.0.GA.zip from /var/tmp - netinstall_jboss]/returns: executed successfully[0m
+[0;32mInfo: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Extract jboss-5.1.0.GA.zip from /var/tmp - netinstall_jboss]: Scheduling refresh of Exec[PostExtract jboss-5.1.0.GA.zip in /opt - netinstall_jboss][0m
+[0;32mInfo: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Extract jboss-5.1.0.GA.zip from /var/tmp - netinstall_jboss]: Scheduling refresh of Exec[Chown jboss-5.1.0.GA.zip in /opt - netinstall_jboss][0m
+[mNotice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[Chown jboss-5.1.0.GA.zip in /opt - netinstall_jboss]: Triggered 'refresh' from 1 events[0m
+[mNotice: /Stage[main]/Jboss::Install/Puppi::Netinstall[netinstall_jboss]/Exec[PostExtract jboss-5.1.0.GA.zip in /opt - netinstall_jboss]: Triggered 'refresh' from 1 events[0m
+[mNotice: /Stage[main]/Jboss::Service/File[jboss.init]/ensure: created[0m
+[0;32mInfo: /Stage[main]/Jboss::Service/File[jboss.init]: Scheduling refresh of Service[jboss][0m
+[mNotice: /Stage[main]/Jboss::Service/Service[jboss]/ensure: ensure changed 'stopped' to 'running'[0m
+[0;32mInfo: /Stage[main]/Jboss::Service/Service[jboss]: Unscheduling refresh on Service[jboss][0m
+[mNotice: /Stage[main]/Deploy::App/Remote_file::File[/tmp/testweb.zip]/Exec[retrieve_/tmp/testweb.zip]/returns: executed successfully[0m
+[mNotice: /Stage[main]/Deploy::App/Remote_file::File[/tmp/testweb.zip]/File[/tmp/testweb.zip]/mode: mode changed '0644' to '0655'[0m
+[0;32mInfo: Remote_file::File[/tmp/testweb.zip]: Scheduling refresh of Exec[unzip_testweb][0m
+[mNotice: /Stage[main]/Deploy::App/Exec[unzip_testweb]/returns: executed successfully[0m
+[mNotice: /Stage[main]/Deploy::App/Exec[unzip_testweb]: Triggered 'refresh' from 1 events[0m
+[mNotice: /Stage[main]/Deploy::App/File[/opt/jboss/server/default/deploy/testweb/]/owner: owner changed 'root' to 'jboss'[0m
+[mNotice: /Stage[main]/Deploy::App/File[/opt/jboss/server/default/deploy/testweb/]/group: group changed 'root' to 'jboss'[0m
+[mNotice: /Stage[main]/Deploy::App/File[/opt/jboss/server/default/deploy/testweb/testweb.war]/owner: owner changed 'root' to 'jboss'[0m
+[mNotice: /Stage[main]/Deploy::App/File[/opt/jboss/server/default/deploy/testweb/testweb.war]/group: group changed 'root' to 'jboss'[0m
+[mNotice: /Stage[main]/Deploy::App/File[/opt/jboss/server/default/deploy/testweb/testweb.xml]/owner: owner changed 'root' to 'jboss'[0m
+[mNotice: /Stage[main]/Deploy::App/File[/opt/jboss/server/default/deploy/testweb/testweb.xml]/group: group changed 'root' to 'jboss'[0m
+[mNotice: Finished catalog run in 74.26 seconds[0m
